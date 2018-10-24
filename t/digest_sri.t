@@ -43,7 +43,7 @@ BEGIN {
 	use_ok('Digest::SRI','sri','verify_sri')
 		or BAIL_OUT("failed to use Digest::SRI");
 }
-is $Digest::SRI::VERSION, '0.02', 'Digest::SRI version matches tests';
+is $Digest::SRI::VERSION, '0.03', 'Digest::SRI version matches tests';
 
 my $fn = catfile($FindBin::Bin,'testfile.txt');
 

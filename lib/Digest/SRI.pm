@@ -9,7 +9,7 @@ require MIME::Base64;
 
 # For AUTHOR, COPYRIGHT, AND LICENSE see the bottom of this file
 
-our $VERSION = '0.02';
+our $VERSION = '0.03';
 
 use Exporter 'import';
 our @EXPORT_OK = qw/ sri verify_sri /;
@@ -224,7 +224,8 @@ warnings if this is deemed necessary.
 
 =back
 
-This documentation describes version 0.02 of this module.
+This documentation describes version 0.03 of this module.
+B<This is a development version.>
 
 =head2 References
 
