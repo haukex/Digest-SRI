@@ -10,6 +10,9 @@ Please see the module's documentation (POD) for details (try the
 command `perldoc lib/Digest/SRI.pm`) and the file `Changes` for
 version information.
 
+[![Travis CI Build Status](https://travis-ci.org/haukex/Digest-SRI.png)](https://travis-ci.org/haukex/Digest-SRI)
+[![CPAN Testers](https://badges.zero-g.net/cpantesters/Digest-SRI.svg)](http://matrix.cpantesters.org/?dist=Digest-SRI)
+
 Installation
 ------------
 
