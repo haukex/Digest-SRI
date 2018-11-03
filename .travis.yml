@@ -17,4 +17,4 @@ perl:
 before_install:
     - cpanm --notest Devel::Cover::Report::Coveralls
 after_success:
-    - cover -test -report coveralls
+    - cover -test -coverage default,-pod -report coveralls
