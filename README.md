@@ -1,7 +1,8 @@
 Digest-SRI
 ==========
 
-This is the distribution of the Perl module `Digest::SRI`.
+This is the distribution of the Perl module
+[`Digest::SRI`](https://metacpan.org/pod/Digest::SRI).
 
 It is a Perl extension for calculating and verifying Subresource
 Integrity hashes. See <https://www.w3.org/TR/SRI/> for background.
