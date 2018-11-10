@@ -13,7 +13,7 @@ version information.
 
 [![Travis CI Build Status](https://travis-ci.org/haukex/Digest-SRI.svg)](https://travis-ci.org/haukex/Digest-SRI)
 [![Coverage Status](https://coveralls.io/repos/github/haukex/Digest-SRI/badge.svg)](https://coveralls.io/github/haukex/Digest-SRI)
-[![Kwalitee Score](https://badges.zero-g.net/kwalitee/Digest-SRI.svg)](https://cpants.cpanauthors.org/dist/Digest-SRI)
+[![Kwalitee Score](https://cpants.cpanauthors.org/dist/Digest-SRI.svg)](https://cpants.cpanauthors.org/dist/Digest-SRI)
 [![CPAN Testers](https://badges.zero-g.net/cpantesters/Digest-SRI.svg)](http://matrix.cpantesters.org/?dist=Digest-SRI)
 
 Installation
