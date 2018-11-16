@@ -9,7 +9,7 @@ require MIME::Base64;
 
 # For AUTHOR, COPYRIGHT, AND LICENSE see the bottom of this file
 
-our $VERSION = '0.03';
+our $VERSION = '0.04';
 
 use Exporter 'import';
 our @EXPORT_OK = qw/ sri verify_sri /;
@@ -35,7 +35,7 @@ sub new {
 		$class->{dig}->reset;
 		return $class;
 	}
-	my $param = @_ ? shift : $DEFAULT_ALGO;
+	my $param = @_ && defined $_[0] ? shift : $DEFAULT_ALGO;
 	my ($algo,$expected);
 	if ( $param =~ m{\A(${KNOWN_ALGO_RE})-([A-Za-z0-9+/=]+)\z} )
 		{ $algo = $1; $expected = $2 }
@@ -52,6 +52,8 @@ sub new {
 	return bless $self, $class;
 }
 *reset = \&new;
+
+sub algo { return $KNOWN_ALGOS{shift->{algo}} }
 
 sub clone {
 	my $self = shift;
@@ -142,6 +144,7 @@ Digest::SRI - Calculate and verify Subresource Integrity hashes (SRI)
  $sri->addfile($filehandle);
  $sri->add($string);
  print $sri->sri, "\n";
+ print $sri->algo, "\n";  # prints "SHA-256"
  
  my $sri = Digest::SRI->new("sha256-...base64...");
  $sri->add...(...);

@@ -1,7 +1,8 @@
 Revision history for Perl extension Digest::SRI.
 
 0.04	not yet released
-	- ...
+	- handle Digest::SRI->new(undef)
+	- added ->algo method
 
 0.02	Wed, Oct 24 2018	commit 5ae1e6428e7e62a684af2a87800ddaa784910fbf
 	- first release

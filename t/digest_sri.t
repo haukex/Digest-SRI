@@ -33,7 +33,7 @@ use Digest_SRI_Testlib;
 use File::Spec::Functions qw/catfile/;
 
 my $HAVE_MD5; BEGIN { $HAVE_MD5 = eval { require Digest::MD5; 1 } }
-use constant TESTCOUNT => 31 + ($HAVE_MD5 ? 3 : 0);  ## no critic (ProhibitConstantPragma)
+use constant TESTCOUNT => 33 + ($HAVE_MD5 ? 3 : 0);  ## no critic (ProhibitConstantPragma)
 use Test::More tests=>TESTCOUNT;
 
 ## no critic (RequireCarping)
@@ -43,7 +43,7 @@ BEGIN {
 	use_ok('Digest::SRI','sri','verify_sri')
 		or BAIL_OUT("failed to use Digest::SRI");
 }
-is $Digest::SRI::VERSION, '0.03', 'Digest::SRI version matches tests';
+is $Digest::SRI::VERSION, '0.04', 'Digest::SRI version matches tests';
 
 my $fn = catfile($FindBin::Bin,'testfile.txt');
 
@@ -99,12 +99,16 @@ is +Digest::SRI->new->add("Perl")->sri,
 	'sha512-hHYEAHP6SF4pIKJCM7KOHY1YlZijmHXII/Z1bPhlC66rXY8FNa0+3AmYgfw+DQHaWWIKRuNEdx8jYLXFlMzc6A==', 'default algo sri';
 is sri(\"Perl"), 'sha512-hHYEAHP6SF4pIKJCM7KOHY1YlZijmHXII/Z1bPhlC66rXY8FNa0+3AmYgfw+DQHaWWIKRuNEdx8jYLXFlMzc6A==', 'sri() default algo';
 
+is +Digest::SRI->new(undef)->algo, 'SHA-512', 'undef to new (default) and ->algo';
+
 like exception { Digest::SRI::new(bless {}, "Foo") },
 	qr/\bbad argument to new\b/, 'new bad arg 1';
 like exception { Digest::SRI::new(\"Foo") },
 	qr/\bbad argument to new\b/, 'new bad arg 2';
 like exception { Digest::SRI->new("foo") },
-	qr/\bunknown\/unsupported algorithm 'foo'/, 'new bad algo';
+	qr/\bunknown\/unsupported algorithm 'foo'/, 'new bad algo 1';
+like exception { Digest::SRI->new("") },
+	qr/\bunknown\/unsupported algorithm ''/, 'new bad algo 2';
 like exception { Digest::SRI->new->addfilename("this_file_shouldnt_exist") },
 	qr/\bcouldn't open this_file_shouldnt_exist:/, 'addfilename fail';
 like exception { sri(1,2,3) }, qr/\btoo many arguments to sri\b/, 'sri() bad arg count 1';
