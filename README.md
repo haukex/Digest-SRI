@@ -12,6 +12,7 @@ command `perldoc lib/Digest/SRI.pm`) and the file `Changes` for
 version information.
 
 [![Travis CI Build Status](https://travis-ci.org/haukex/Digest-SRI.svg)](https://travis-ci.org/haukex/Digest-SRI)
+[![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/haukex/Digest-SRI?svg=true)](https://ci.appveyor.com/project/haukex/digest-sri)
 [![Coverage Status](https://coveralls.io/repos/github/haukex/Digest-SRI/badge.svg)](https://coveralls.io/github/haukex/Digest-SRI)
 [![Kwalitee Score](https://cpants.cpanauthors.org/dist/Digest-SRI.svg)](https://cpants.cpanauthors.org/dist/Digest-SRI)
 [![CPAN Testers](https://badges.zero-g.net/cpantesters/Digest-SRI.svg)](http://matrix.cpantesters.org/?dist=Digest-SRI)
